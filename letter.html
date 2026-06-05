@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>For My Anushka</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-gradient-start: #fff6f7;
+            --bg-gradient-end: #ffeef1;
+            --text-color: #3d2226;
+            --accent-rose: #e5b3be;
+            --muted-rose: #8a5761;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            /* Premium mobile spacing with iPhone top & bottom cutout protections */
+            padding: calc(env(safe-area-inset-top) + 24px) 16px calc(env(safe-area-inset-bottom) + 24px) 16px;
+            background: linear-gradient(180deg, var(--bg-gradient-start), var(--bg-gradient-end));
+            color: var(--text-color);
+            font-family: 'Inter', -apple-system, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Responsive Mobile Envelope Frame Container */
+        .letter-envelope {
+            width: 100%;
+            max-width: 410px;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 40px 24px;
+            border-radius: 28px;
+            box-shadow: 0 10px 35px rgba(239, 184, 195, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Thin Elegant Inner Border */
+        .letter-envelope::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            right: 12px;
+            bottom: 12px;
+            border: 1px solid var(--accent-rose);
+            border-radius: 20px;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        /* Flower corner spots */
+        .corner-flower {
+            position: absolute;
+            font-size: 1.1rem;
+            opacity: 0.6;
+            user-select: none;
+        }
+        .top-left  { top: 20px; left: 20px; }
+        .top-right { top: 20px; right: 20px; }
+        .bottom-left  { bottom: 20px; left: 20px; }
+        .bottom-right { bottom: 20px; right: 20px; }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            font-size: 1.8rem;
+            text-align: center;
+            margin: 10px 0 4px 0;
+            color: var(--muted-rose);
+            letter-spacing: -0.3px;
+        }
+
+        .milestone {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+            color: #b57c8a;
+            margin-bottom: 32px;
+            text-transform: uppercase;
+        }
+
+        .milestone::after {
+            content: '🌸';
+            display: block;
+            font-size: 0.75rem;
+            margin-top: 6px;
+            opacity: 0.7;
+        }
+
+        /* Main Letter Text - Elegant, legible text formatting for screens */
+        .letter-content {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--text-color);
+        }
+
+        .letter-content p {
+            margin: 0 0 20px 0;
+            text-align: left;
+        }
+        
+        .letter-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Sign-off Section */
+        .sign-off {
+            margin-top: 36px;
+            text-align: right;
+            padding-right: 8px;
+        }
+
+        .closing {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: #b57c8a;
+            margin-bottom: 2px;
+        }
+
+        .signature {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: var(--muted-rose);
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        /* Full Screen Animation Canvas Backdrop */
+        #petal-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="petal-canvas"></canvas>
+
+    <div class="letter-envelope">
+        <span class="corner-flower top-left">🌸</span>
+        <span class="corner-flower top-right">🌸</span>
+        <span class="corner-flower bottom-left">🌸</span>
+        <span class="corner-flower bottom-right">🌸</span>
+
+        <h1>Hey mero girlfriend,</h1>
+        <div class="milestone">Our Seven Months</div>
+
+        <div class="letter-content">
+            <p>Happy seven months together baby, feels like just yesterday I was there holding you but time has flown right past us. And i hope it flies even faster cause i really cannot wait to be with you and do everything with you. Been 7 months already since you became the colors of my life huh.</p>
+            
+            <p>I love you so much, I would show you how much by spreading my arms like we used to haha but then my arms would need to stretch to the end of the observable universe ( and also keeps on expanding like the observable universe.) I love you so so much mero Anushka. I love everything about you. I would love to hear your sweet voice all day while my eyes are on you the whole time. I would love to stare at you for hours on end and hold you close to me.</p>
+            
+            <p>I know this month has been really rough on both of us and I am sorry for my state right now, I will be better slowly and try to do better and feel better. I wish I was strong enough to support you just like you have been helping me. being with you genuinely puts a big smile on my face and makes me forget about everything else. You have been the source of most of my happiness thank you for being so supportive and helpful.</p>
+            
+            <p>I really cannot wait to see you soon, hopefully we manage a date soon that works for the both of us and ill get the tickets and Ill fly to your city excited to see your face then hold me console me...hehehe I love you so much. Hopefully I really do see you soon enough.</p>
+
+            <p>there is so much i want to tell you and so much i ache to do with you that it is painful to keep it locked away in my heart. you made me feel things that i could not even imagine like a colorblind person seeing colors for the first time. You have made my life more fun and bearable to live. </p>
+
+            <p>Thank you for being with me when i really needed you, it really did help so much. no matter how dark the days were being with you always lightened up my mood</p>
+
+            <p> All yours, Ruzan your boyfriend</p>
+        </div>
+
+        <div class="sign-off">
+            <div class="closing">All yours,</div>
+            <div class="signature">ruzan</div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('petal-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+        // Flower configuration properties arrays
+        const flowerCount = 16; 
+        const flowers = [];
+
+        class Flower {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height - height;
+                this.size = Math.floor(Math.random() * 10) + 14; // Font sizing values
+                this.vs = Math.random() * 0.6 + 0.4; // Falling velocities
+                this.hs = Math.random() * 0.8 - 0.4; // Sway speeds
+                this.spin = Math.random() * 0.02;
+                this.angle = Math.random() * Math.PI;
+            }
+
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.angle);
+                ctx.font = `${this.size}px serif`;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('🌸', 0, 0);
+                ctx.restore();
+            }
+
+            update() {
+                this.y += this.vs;
+                this.x += this.hs + Math.sin(this.y / 30) * 0.3;
+                this.angle += this.spin;
+
+                // Re-spawn tracking parameters once layout borders are bypassed
+                if (this.y > height + 20 || this.x > width + 20 || this.x < -20) {
+                    this.y = -20;
+                    this.x = Math.random() * width;
+                    this.vs = Math.random() * 0.6 + 0.4;
+                    this.hs = Math.random() * 0.8 - 0.4;
+                }
+            }
+        }
+
+        for (let i = 0; i < flowerCount; i++) {
+            flowers.push(new Flower());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            flowers.forEach(flower => {
+                flower.draw();
+                flower.update();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>
